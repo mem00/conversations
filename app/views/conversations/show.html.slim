@@ -1,1 +1,4 @@
 h1 #{@conversation.title} -- #{@conversation.start_date}
+-@messages.each do |message|
+  div #{format_datetime(message.created_at)}   #{message.text}  
+= render template: "messages/new"
