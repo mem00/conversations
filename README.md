@@ -4,7 +4,7 @@
 
 * Rails 6.0.3.5
 
-* Postgresql [https://formulae.brew.sh/formula/postgresql]
+* [Postgresql](https://formulae.brew.sh/formula/postgresql)
 
  ## How to Run
 
