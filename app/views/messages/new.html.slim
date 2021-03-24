@@ -1,0 +1,5 @@
+form action="#{conversation_messages_path(@conversation)}" method="POST"
+  =hidden_field_tag :authenticity_token, form_authenticity_token
+  input type="text" required="required" placeholder="Text" name="message[text]"
+  input type="hidden" value="#{@conversation.id}" name="message[conversation_id]"
+  input type="submit" value="Create Message"
