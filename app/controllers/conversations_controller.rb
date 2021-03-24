@@ -5,7 +5,8 @@ class ConversationsController < ApplicationController
   end
 
   def show
-    @conversation = Conversation.find(params[:id])
+    @conversation = Conversation.includes(:messages).find(params[:id])
+    @messages = @conversation.messages
   end
 
   def new
