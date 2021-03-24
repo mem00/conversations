@@ -1,24 +1,14 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+* ruby 2.5.1
 
-Things you may want to cover:
+* Rails 6.0.3.5
 
-* Ruby version
+* Postgresql [https://formulae.brew.sh/formula/postgresql]
 
-* System dependencies
+ ## How to Run
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+ 1. bundle install
+ 2. rake db:create
+ 3. rake db:migrate
+ 4. rails s
