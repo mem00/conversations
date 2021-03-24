@@ -1,12 +1,13 @@
 require "application_system_test_case"
 
-class MessagesTest < ApplicationSystemTestCase
+class ThoughtsTest < ApplicationSystemTestCase
   # test "visiting the index" do
-  #   visit messages_url
+  #   visit thoughts_url
   #
-  #   assert_selector "h1", text: "Messages"
+  #   assert_selector "h1", text: "Thoughts"
   # end
-  test "create a message" do
+
+  test "create a thought" do
     visit conversations_path
   
     click_on "New conversation"
@@ -19,6 +20,11 @@ class MessagesTest < ApplicationSystemTestCase
 
     click_on "Create Message"
 
-    assert_text "EDT This is a message"
+    fill_in "Thought", with: "This is a thought"
+
+    click_on "Create Thought"
+
+    assert_text "EDT This is a thought"
   end
+
 end
