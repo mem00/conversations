@@ -4,7 +4,9 @@ Rails.application.routes.draw do
   root to: "conversations#index"
   
   resources :conversations, only: [:index, :show, :new, :create] do
-    resources :messages, only: [:new, :create]
+    resources :messages, only: [:new, :create] do
+      resources :thoughts, only: [:new, :create]
+    end
   end
   
 end
