@@ -7,7 +7,7 @@ class ConversationTest < ActiveSupport::TestCase
 
   test "should not create conversation without title" do
     conversation = Conversation.new
-    assert_raise(Exception) { conversation.save }
+    assert_raise(Exception) { conversation.save! }
   end
 
   test "should create start_date" do
