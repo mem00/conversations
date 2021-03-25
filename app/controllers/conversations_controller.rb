@@ -11,7 +11,12 @@ class ConversationsController < ApplicationController
 
   def show
     @conversation = Conversation.includes(:messages, messages: [:thoughts]).find(params[:id])
-    @messages = @conversation.messages.order(:created_at)
+    @query = params[:query]
+    if @query.present?
+      @messages = @conversation.messages.where("LOWER(text) like ?", "%#{@query.downcase}%").order(:created_at)
+    else
+      @messages = @conversation.messages.order(:created_at)
+    end
   end
 
   def new
