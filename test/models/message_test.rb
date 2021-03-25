@@ -5,12 +5,12 @@ class MessageTest < ActiveSupport::TestCase
   #   assert true
   # end
 
-  # test "should not create message without text" do
-  #   message = Message.new
-  #   conversation = conversation(:one)
-  #   message.conversation_id = conversation.id
-  #   assert_raise(Exception) { message.save! }
-  # end
+  test "should not create message without text" do
+    message = Message.new
+    conversation = conversation(:one)
+    message.conversation_id = conversation.id
+    assert_raise(Exception) { message.save! }
+  end
 
   test "should not create message without conversation" do
     message = Message.new
