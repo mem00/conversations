@@ -1,4 +1,7 @@
 h1 #{@conversation.title} -- #{@conversation.start_date}
+h2 
+  form action="#{conversation_path}" method="GET"
+    input type="text" placeholder="Search Messages" value="#{@query}" name="query" 
 -@messages.each do |message|
   -@message = message
   div #{format_datetime(@message.created_at)}   #{@message.text}
