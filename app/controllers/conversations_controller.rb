@@ -1,7 +1,12 @@
 class ConversationsController < ApplicationController
 
   def index
-    @conversations = Conversation.all
+    @query = params[:query]
+    if @query.present?
+      @conversations = Conversation.where("LOWER(title) like ?", "%#{@query.downcase}%")
+    else
+      @conversations = Conversation.all
+    end
   end
 
   def show
