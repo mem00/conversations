@@ -8,5 +8,7 @@ Rails.application.routes.draw do
       resources :thoughts, only: [:new, :create]
     end
   end
+
+  resources :messages, only: [:index]
   
 end

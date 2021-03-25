@@ -1,6 +1,10 @@
 h2
   = link_to "New conversation", new_conversation_path
-
+h2 
+  = link_to "All messages", messages_path
+h2 
+  form action="#{conversations_path}" method="GET"
+    input type="text" placeholder="Search Conversations" value="#{@query}" name="query" 
 - @conversations.each do |conversation|
   div 
     = link_to "#{conversation.title} -- #{conversation.start_date}", conversation_path(conversation)

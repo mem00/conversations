@@ -1,0 +1,6 @@
+h2 
+  form action="#{messages_path}" method="GET"
+    input type="text" placeholder="Search Message" value="#{@query}" name="query" 
+-@messages.each do |message|
+  div
+    = link_to "#{format_datetime(message.created_at)}   #{message.text}", conversation_path(message.conversation)

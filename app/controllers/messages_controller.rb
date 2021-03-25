@@ -1,5 +1,13 @@
 class MessagesController < ApplicationController
-
+ 
+  def index
+    @query = params[:query]
+    if @query.present?
+      @messages = Message.includes(:conversation).where("LOWER(text) like ?", "%#{@query.downcase}%")
+    else
+      @messages = Message.includes(:conversation).all
+    end
+  end
   def new
     @conversation = Conversation.find(params[:conversation_id])
   end
