@@ -2,8 +2,7 @@ class ThoughtsController < ApplicationController
 
   def new
     @conversation = Conversation.find(params[:conversation_id])
-    @message = Message.find(params[:message_id])
-    @thought = Thought.new
+    @message = Message.find(params[:message_id]) 
   end
 
   def create
