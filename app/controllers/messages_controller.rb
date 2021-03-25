@@ -2,7 +2,6 @@ class MessagesController < ApplicationController
 
   def new
     @conversation = Conversation.find(params[:conversation_id])
-    @message = Message.new
   end
 
   def create

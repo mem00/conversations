@@ -10,10 +10,10 @@ class ConversationTest < ActiveSupport::TestCase
     assert_raise(Exception) { conversation.save! }
   end
 
-  test "should create start_date" do
+  test "should create start_date in callback" do
     conversation = Conversation.new
     conversation.title = "Hello World"
-    conversation.save
-    assert conversation.start_date == Date.current
+    conversation.save!
+    assert conversation.start_date
   end
 end

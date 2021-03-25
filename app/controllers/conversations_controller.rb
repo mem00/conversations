@@ -5,12 +5,11 @@ class ConversationsController < ApplicationController
   end
 
   def show
-    @conversation = Conversation.includes(:messages).find(params[:id])
-    @messages = @conversation.messages
+    @conversation = Conversation.includes(:messages, messages: [:thoughts]).find(params[:id])
+    @messages = @conversation.messages.order(:created_at)
   end
 
   def new
-    @conversation = Conversation.new
   end
 
   def create

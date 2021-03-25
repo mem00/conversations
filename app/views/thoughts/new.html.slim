@@ -1,0 +1,5 @@
+form action="#{conversation_message_thoughts_path(@conversation, @message)}" method="POST"
+  =hidden_field_tag :authenticity_token, form_authenticity_token
+  input type="text" required="required" placeholder="Thought" name="thought[text]"
+  input type="hidden" value="#{@message.id}" name="thought[message_id]"
+  input type="submit" value="Create Thought"
